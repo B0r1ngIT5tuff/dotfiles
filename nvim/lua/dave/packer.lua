@@ -1,12 +1,5 @@
 require('packer').startup(function()                                                                  
   use 'wbthomason/packer.nvim'                                                                        
-                                                                                
-  -- Icons                                                                                            
-  use {                                                                                               
-    'yamatsum/nvim-nonicons',                                                                           
-     requires = {'kyazdani42/nvim-web-devicons'}                                                         
-  } 
-  use {'kyazdani42/nvim-web-devicons'}
 
   -- AlphaNvim                                                                                        
   use {

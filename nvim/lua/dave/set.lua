@@ -18,11 +18,6 @@ vim.opt.splitbelow = true                       -- force all horizontal splits t
 vim.opt.splitright = true                       -- force all vertical splits to go to the right of current window
 vim.opt.wrap = false                            -- display lines as one long line
 
--- Icons settings
-local icons = require "nvim-nonicons"
-
-icons.get("file")
-
 -- If a file is in .vim format it is better to use the vim.cmd
 -- Colorscheme
 vim.cmd("colorscheme gruvbox")
