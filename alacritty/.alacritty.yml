@@ -1,0 +1,18 @@
+font:
+  normal:
+    family: Fira Sans
+    style: Regular
+
+  bold:
+    family: Fira Sans
+    style: Bold
+
+  italic:
+    family: Fira Sans
+    style: Italic
+
+  bold_italic:
+    family: Fira Sans
+    style: Bold Italic
+
+  size: 11
