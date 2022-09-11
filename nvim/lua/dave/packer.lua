@@ -1,13 +1,34 @@
+local fn = vim.fn
+
+-- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+  return
+end
+
+-- Have packer use a popup window
+packer.init {
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end,
+  },
+}
+
 require('packer').startup(function()                                                                  
   use 'wbthomason/packer.nvim'                                                                        
 
-  -- AlphaNvim                                                                                        
-  use {
+-- Comments
+  use "numToStr/Comment.nvim" -- Easily comment stuff  
+  use 'JoosepAlviste/nvim-ts-context-commentstring' -- Comment based on the type of the file
+
+-- AlphaNvim                                                                                        
+ use {
     'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
     config = function ()
-      require'alpha'.setup(require'alpha.themes.startify'.config)
-    end}
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+} 
 
 -- Plenary
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
@@ -34,9 +55,12 @@ require('packer').startup(function()
     },                                                                                                
     tag = 'nightly' -- optional, updated every week. (see issue #1193)                                
   }                           
-    
+
 -- Telescope
-  use("nvim-telescope/telescope.nvim")
+  use "nvim-telescope/telescope.nvim"
+
+-- ToggleTerm
+   use "akinsho/toggleterm.nvim"
 
 -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -46,12 +70,19 @@ require('packer').startup(function()
   use("gruvbox-community/gruvbox")
 
 -- Media-files-telescope
-  use("nvim-telescope/telescope-media-files.nvim")
+  use "nvim-telescope/telescope-media-files.nvim"
 
-  -- Lualine
+-- Lualine
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+
+-- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "p00f/nvim-ts-rainbow" -- It enables to recognize parenthesis by coloring them with rainbow colors
 
 end)

@@ -79,9 +79,9 @@ telescope.setup {
   pickers = {
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
+     --  picker_config_key = telescope.builtin.live_grep{},
+     --  ...
+     --}
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
   },

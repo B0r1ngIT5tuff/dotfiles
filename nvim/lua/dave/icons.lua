@@ -41,7 +41,7 @@ icon.set_icon ({
   },
 })
 
--- Markdwon
+-- Markdown
 icon.set_icon ({
   markdown = {
    icon = "",
